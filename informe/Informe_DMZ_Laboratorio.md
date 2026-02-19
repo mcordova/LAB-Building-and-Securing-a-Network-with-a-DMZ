@@ -40,12 +40,21 @@ Completa la tabla con las IPs asignadas (puedes copiarla del enunciado si no cam
 - Interfaces configuradas con `ip address`
 - NAT:
 ```bash
+interface GigabitEthernet0/1
 ip nat inside source static 192.168.2.10 192.168.3.1
+exit
 ```
 - ACLs:
 ```bash
-access-list 101 permit tcp any host 192.168.3.1 eq 80
-access-list 100 deny ip 192.168.2.0 0.0.0.255 192.168.1.0 0.0.0.255
+ip access-list extended ACL_EXTERNA 
+permit tcp any host 192.168.3.1 eq 80
+exit
+
+# ! ACL para evitar tráfico interno desde el servidor de la DMZ
+ip access-list extended ACL_DMZ 
+deny ip 192.168.2.0 0.0.0.255 192.168.1.0 0.0.0.255
+permit ip any any
+exit
 ```
 
 
