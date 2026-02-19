@@ -78,4 +78,5 @@ Aprendí a aplicar NAT y ACLs en un entorno simulado. Recomiendo verificar conec
 
 ### 7. Capturas de evidencia
 
-> Adjunta aquí (o en un PDF anexo) las capturas solicitadas: pings, navegador, comandos `show`, etc.
+> 
+> ![Capturas](M18-DMZ-capturas.pdf)
